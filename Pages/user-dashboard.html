@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - RavalsanTrip</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .navbar { background-color: #1a1a1a !important; }
+        .product-img { height: 200px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logoo-removebg-preview.png" alt="Logo" width="30" height="30">
+                RavalsanTrip
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3">Welcome, User</span>
+                <a href="../Pages/Home/index.html" class="btn btn-outline-light">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+        <!-- My Orders -->
+        <div class="row mb-4">
+            <div class="col">
+                <h2>My Orders</h2>
+            </div>
+        </div>
+
+        <!-- Order List -->
+        <div class="row" id="orderList">
+            <!-- Order cards will be dynamically added here -->
+        </div>
+
+        <!-- Available Products -->
+        <div class="row mb-4 mt-5">
+            <div class="col">
+                <h2>Available Products</h2>
+            </div>
+        </div>
+
+        <!-- Product List -->
+        <div class="row" id="productList">
+            <!-- Product cards will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Book Trip Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book Trip</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" id="userName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="userEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="userPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trip Date</label>
+                            <input type="date" class="form-control" id="tripDate" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveBooking()">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample data
+        let products = [
+            {
+                id: 1,
+                name: "Mount Rinjani Trip",
+                description: "3D2N Trip to Mount Rinjani",
+                price: 2000000,
+                image: "https://images.unsplash.com/photo-1698267703889-06c41f9acba5"
+            }
+        ];
+
+        let orders = [];
+
+        // Display products
+        function displayProducts() {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+
+            products.forEach(product => {
+                productList.innerHTML += `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${product.image}" class="card-img-top product-img" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text">${product.description}</p>
+                                <p class="card-text">IDR ${product.price.toLocaleString()}</p>
+                                <button class="btn btn-primary" onclick="bookTrip(${product.id})">
+                                    Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Display orders
+        function displayOrders() {
+            const orderList = document.getElementById('orderList');
+            orderList.innerHTML = '';
+
+            orders.forEach(order => {
+                orderList.innerHTML += `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${order.productName}</h5>
+                                <p class="card-text">Date: ${order.date}</p>
+                                <p class="card-text">Status: ${order.status}</p>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-warning" onclick="editOrder(${order.id})">
+                                        Modify
+                                    </button>
+                                    <button class="btn btn-danger" onclick="cancelOrder(${order.id})">
+                                        Cancel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Book trip
+        function bookTrip(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                // Show booking modal
+                const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+                modal.show();
+            }
+        }
+
+        // Save booking
+        function saveBooking() {
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const phone = document.getElementById('userPhone').value;
+            const date = document.getElementById('tripDate').value;
+
+            const newOrder = {
+                id: orders.length + 1,
+                productName: "Mount Rinjani Trip", // Example
+                date: date,
+                status: "Pending",
+                customerName: name,
+                email: email,
+                phone: phone
+            };
+
+            orders.push(newOrder);
+            displayOrders();
+            
+            // Close modal and reset form
+            const modal = bootstrap.Modal.getInstance(document.getElementById('bookingModal'));
+            modal.hide();
+            document.getElementById('bookingForm').reset();
+        }
+
+        // Cancel order
+        function cancelOrder(id) {
+            if (confirm('Are you sure you want to cancel this order?')) {
+                orders = orders.filter(order => order.id !== id);
+                displayOrders();
+            }
+        }
+
+        // Edit order
+        function editOrder(id) {
+            const order = orders.find(o => o.id === id);
+            if (order) {
+                // Implement edit functionality
+                alert('Edit functionality to be implemented');
+            }
+        }
+
+        // Initialize display
+        window.onload = () => {
+            displayProducts();
+            displayOrders();
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

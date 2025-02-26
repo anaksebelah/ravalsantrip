@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="../css/cave.css">
+    <title>Ravalsan Trip</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../img/logoo-removebg-preview.png" alt="Bootstrap" width="30" height="30">
+        RavalsanTrip
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-sm-0 fw-semibold gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../Pages/Home/index2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../Pages/promo/promo.html">Promo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../Pages/aboutus.html">About us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Product
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../Pages/mountain.html">Mountain</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../Pages/cave.html">Cave</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../Pages/rafting.html">Rafting</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../Pages/tourist.html">Tourism Destination</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../Pages/tourist.html">Attractions & Entertainment</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../Pages/travelinsurance.html">Travel Insurance</a></li>
+            </ul>
+            <li>
+              <a href="../Pages/Home/index.html" class="nav-link">
+               <span class="icon"><i class="bi bi-box-arrow-left"></i></span>
+              </a>
+            </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <main>
+        <section class="modal fade" tabindex="-1" id="booking-modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Book a trip</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  
+                 <form action="#">
+                    <div class="row g-2">
+                         <div class="col-sm-6">
+                             <div class="form-floating">
+                                <input id="email1" type="email" class="form-control" placeholder="Your email">
+                                <label for="email1">Email address</label>
+                              </div>
+                          </div>
+                         <div class="col-sm-6">
+                             <div class="form-floating">
+                                  <select id="select1" class="form-select">
+                                    <option>Carstenz Pyramid, Papua - IDR 60.000.000</option>
+                                    <option>Puncak Mandala, Papua - IDR 40.000.000</option>
+                                    <option>Puncak Trikora, Papua - IDR 30.000.000</option>
+                                    <option>Mount Jayawijaya, Papua - IDR 50.000.000</option>
+                                     <option>Mount Rinjani, NTB - IDR 2.100.000</option>
+                                     <option>Raja Semeru, East Java - IDR 1.700.000</option>
+                                     <option>Mount Kerinci, Sumatra - IDR 1.850.000</option>
+                                  </select>
+                                <label for="select1">Pick a tour</label>
+                             </div>
+                          </div>
+                          <div class="col-sm-23">
+                            <div class="form-floating">
+                              <input id="coupon" type="text" class="form-control" placeholder="Enter coupon code">
+                              <label for="coupon">Enter Coupon Code (Optional)</label>
+                              <small class="text-muted">Available coupons: RT25L (5% OFF), RT25XL (10% OFF)</small>
+                            </div>
+                          </div>
+                     </div>
+                 </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Regist</button>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active c-item">
+                    <img src="https://www.goa-jomblang.com/wp-content/uploads/2015/12/slider3.jpg" class="d-block w-100 c-img" alt="...">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p class="fs-3 mt-5 text-uppercase">Goa Jomblang</p>
+                        <h1 class="display-1 text-capitalize">Most Popular Cave</h1>
+                        <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book a trip</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                  <img src="https://www.tripjalanjalan.com/wp-content/uploads/2019/05/Wisata-Goa-Gong-yang-Mendunia.jpg" class="d-block w-100 c-img" alt="...">
+                  <div class="carousel-caption top-0 mt-4">
+                      <p class="fs-3 mt-5 text-uppercase">Goa Gong</p>
+                      <h1 class="display-1 text-capitalize">Most Popular Cave</h1>
+                      <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book a trip</button>
+                    </div>
+                </div>
+                <div class="carousel-item c-item">
+                    <img src="https://www.dejogjaadventure.com/wp-content/uploads/2018/01/DSC_004-01.jpeg" class="d-block w-100 c-img" alt="...">
+                    <div class="carousel-caption top-0 mt-4">
+                        <p class="fs-3 mt-5 text-uppercase">Goa Pindul</p>
+                        <h1 class="display-1 text-capitalize">Most Popular Cave</h1>
+                        <button class="btn btn-primary px-4 py-2 fs-5 mt-5" data-bs-toggle="modal" data-bs-target="#booking-modal">Book a trip</button>
+                      </div>
+                  </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
+        </section>
+
+        <section class="overview">
+            <div class="container h-100 d-flex align-items-center">
+                <div class="row w-100 text-center fs-4">
+                    <div class="col-md">
+                        <i class="bi bi-compass-fill me-2"></i>
+                        Seven summit Indonesia
+                    </div>
+                    <div class="col-md">
+                        <i class="bi bi-wallet-fill me-2"></i>
+                        Only pay 5% up front
+                    </div>
+                    <div class="col-md">
+                        <i class="bi bi-patch-check-fill me-2"></i>
+                        1205's of customers
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="packages" class="packages pt-md-5 py-5">
+            <h2 class="text-center my-5">Explore Cave</h2>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <div class="card">
+                            <img src="https://backpackerjakarta.com/wp-content/uploads/2016/09/GOA-GONG-PACITAN2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Goa Gong, Yogyakarta</h5>
+                                <p class="card-text">Goa Gong is a stunning and popular cave located in the Gunungkidul region of Yogyakarta, Indonesia.</p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="card">
+                            <img src="https://pariwisataindonesia.id/wp-content/uploads/2020/01/shutterstock_1183091458.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Goa Lawa, East Nusa Tenggara</h5>
+                                <p class="card-text">Goa Lawa, located in East Nusa Tenggara, Indonesia, is a cave known for its natural beauty and historical significance. </p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg">
+                        <div class="card">
+                            <img src="https://pesonaindo.com/wp-content/uploads/2016/04/Foto-Goa-Pindul-Jogja-Pesona-Indonesia-fototrip-2.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Goa Pindul, Yogyakarta</h5>
+                                <p class="card-text">Goa Pindul is a unique and popular destination, known for its natural beauty and thrilling adventure experiences.</p>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <br>
+            <div class="container">
+              <div class="row">
+                  <div class="col-lg">
+                      <div class="card">
+                          <img src="https://th.bing.com/th/id/OIP.jS18Ln5g6eYM8pcGwYVBIAHaE_?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Goa Rancang Kencono, East Java</h5>
+                              <p class="card-text">This cave is known for its historic significance and unique rock formations, located in East Java.</p>
+                              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg">
+                      <div class="card">
+                          <img src="https://img.okezone.com/content/2016/09/26/406/1498782/foto-beginilah-kelakuan-pendaki-di-gunung-sindoro-zRnlf1GSSk.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Mount Sindoro, Central Java</h5>
+                              <p class="card-text">Mount Sindoro is an active stratovolcano located in Central Java, Indonesia. With an elevation of 3,150 meters. </p>
+                              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg">
+                      <div class="card">
+                          <img src="https://2.bp.blogspot.com/-i565QaU7TGA/Wl7t_kaiArI/AAAAAAAAA_Y/hygE3Ja82i0RMYckRh2uNRQuLjKL8wWrQCLcBGAs/s640/sumbing_%2B%25281%2529.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title">Mount Sumbing, Central Java</h5>
+                              <p class="card-text">Mount Sumbing is one of the highest volcanoes in Central Java, Indonesia, standing at 3,371 meters above sea level.</p>
+                              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#booking-modal">Book trip</button>
+                        </div>
+                   </div>
+               </div>
+              </div>
+            
+        </section>
+       
+    <section id="schedule" class="schedule pt-md-5">
+      <div class="container">
+        <div class="row">
+         <table class="table table-striped">
+          <thead class="table-dark">
+            <h1 class="mt-5 mb-4 text-center">Schedule</h1>
+            <tr>
+              <th scope="col">
+                No
+              </th scope="col">
+              <th>
+                Date
+              </th>
+              <th scope="col">
+                Month
+              </th scope="col">
+              <th>
+                Years
+              </th>
+              <th scope="col">
+                Destination
+              </th scope="col">
+              <th>
+                Minimum Departure
+              </th>
+      
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>28-29</td>
+              <td>Desember</td>
+              <td>2024</td>
+              <td>Mount Slamet</td>
+              <td>7 Orang</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>4-5</td>
+              <td>Januari</td>
+              <td>2025</td>
+              <td>Mount Prau</td>
+              <td>10 Orang</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>18-19</td>
+              <td>Januari</td>
+              <td>2025</td>
+              <td>Mount Gede</td>
+              <td>10 Orang</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>1-2</td>
+              <td>Februari</td>
+              <td>2025</td>
+              <td>Mount Ciremai</td>
+              <td>10 Orang</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>8-9</td>
+              <td>Februari</td>
+              <td>2025</td>
+              <td>Mount Sindoro</td>
+              <td>10 Orang</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>22-23</td>
+              <td>Februari</td>
+              <td>2025</td>
+              <td>Mount Agung</td>
+              <td>10 Orang</td>
+            </tr>
+            <tr>
+             <td>7</td>
+             <td>7-10</td>
+             <td>Maret</td>
+             <td>2025</td>
+             <td>Mount Sumbing</td>
+             <td>10 Orang</td>
+           </tr>
+           <tr>
+             <td>8</td>
+             <td>29-30</td>
+             <td>Maret</td>
+             <td>2025</td>
+             <td>Mount Merbabu</td>
+             <td>10 Orang</td>
+           </tr>
+           <tr>
+             <td>9</td>
+             <td>1-4</td>
+             <td>Mei</td>
+             <td>2025</td>
+             <td>Mount Rinjani</td>
+             <td>8 Orang</td>
+           </tr>
+           <tr>
+             <td>10</td>
+             <td>22-1</td>
+             <td>Mei-Juni</td>
+             <td>2025</td>
+             <td>Mount Jayawijaya</td>
+             <td>8 Orang</td>
+           </tr>
+           <tr>
+             <td>11</td>
+             <td>28-30</td>
+             <td>Juni</td>
+             <td>2025</td>
+             <td>Mount Raung</td>
+             <td>10 Orang</td>
+           </tr>
+           <tr>
+             <td>12</td>
+             <td>15-16</td>
+             <td>Agustus</td>
+             <td>2025</td>
+             <td>Mount Pangrango</td>
+             <td>7 Orang</td>
+           </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </section>
+   
+
+        <section id="faq" class="py-md-5">
+            <h2 class="my-5 text-center">FAQ</h2>
+
+          <div class="container">
+            <div class="accordion w-75 mx-auto" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is included in this trip package?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Transportation
+                      (including pick-up and drop-off from the meeting point.), Accommodation, Entrance fees to attractions, Basic travel insurance, Licensed tour guide.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do I need to bring any special gear?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Comfortable shoes for walking or trekking, Weather-appropriate clothing (jackets, rain gear, hats, etc.)
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Can I cancel my trip after registering?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Cancellations more than 30 days</strong> before the departure date: Full refund minus administrative fees.
+                        <strong>Cancellations between 15–30 days</strong> before the departure date: 50% refund.
+                        <strong>Cancellations within 15 days</strong> of departure: No refund.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            
+            
+            <div class="col-md-4 mb-3">
+              <div class="footer-logo">
+                <h4>RavalsanTrip</h4>
+              </div>
+              <p>RavalsanTrip is where you find a wide range of quality information and services. We are committed to providing the best for you.</p>
+            </div>
+    
+            
+            <div class="col-md-4 mb-3">
+              <h4>Our Contact</h4>
+              <ul class="list-unstyled">
+                <li>Email: ravalsantrip@website.com</li>
+                <li>Phone: 123-456-789</li>
+                <li>Address: Bojongsoang, Bandung, Jawa Barat.</li>
+              </ul>
+            </div>
+    
+            
+            <div class="col-md-4 mb-3">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+      
+          </div>
+          
+          
+          <div class="row mt-4">
+            <div class="col text-center">
+              <p>&copy; 2024 RavalsanTrip. Semua hak dilindungi.</p>
+            </div>
+          </div>
+
+          <div class="sponsor-logos">
+            <h5 class="text-white">Didukung oleh:</h5>
+            <div class="d-flex justify-content-center">
+              
+             <a href="https://www.eigeradventure.com/"><img src="https://majalabs.io/images/partners/logo_eiger.png" alt="Sponsor 1"></a>
+             <a href="https://www.perhutani.co.id/"><img src="https://1.bp.blogspot.com/-EuOagnfkKZ8/YCoD1hPZxqI/AAAAAAAAH7k/t67zx332LnQm9XXCDDPl0rBplzjSTr1bACLcBGAsYHQ/s2000/logo-perhutani-01.png" alt="Sponsor 2"></a>
+             <a href="https://www.traveloka.com/en-id"><img src="https://brandlogos.net/wp-content/uploads/2022/10/traveloka-logo_brandlogos.net_gdkey.png" alt="Sponsor 3"></a>
+            </div>
+          </div>
+
+        </div>
+      </footer>
+
+</body>
+</html>

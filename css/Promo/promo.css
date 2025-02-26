@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://th.bing.com/th/id/OIP.Xxzz2cZ5NMnq7dr3STjZyQHaE8?rs=1&pid=ImgDetMain') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    color: black;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    padding: 10px;
+    border-radius: 20px;
+    background: orange;
+    border: none;
+    color: #fff;
+    height: 350px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card h1 {
+    font-size: 48px;
+    margin-bottom: 0px;
+  }
+  
+  .card span {
+    font-size: 28px;
+  }
+  
+  .image {
+    position: absolute;
+    opacity: .1;
+    left: 0;
+    top: 0;
+  }
+  
+  .image2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: .1;
+  }
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #343a40; /* Warna latar belakang footer */
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .footer p, .footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+  }
+  
+  .footer .social-links a {
+    color: white;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .social-links a:hover {
+    color: #007bff;
+  }
+  
+  .footer .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .sponsor-logos {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .sponsor-logos img {
+    max-height: 80px;
+    margin: 0 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sponsor-logos img:hover {
+    opacity: 1;
+  }

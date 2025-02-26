@@ -1,0 +1,64 @@
+.c-item {
+    height: 500px;
+    
+}
+
+.c-img {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.overview {
+    height: 180px;
+    background-color: #d3dae1;
+}
+
+.footer {
+    background-color: #343a40; /* Warna latar belakang footer */
+    color: white;
+    padding: 40px 0;
+  }
+  
+  .footer h4 {
+    color: #f8f9fa;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .footer p, .footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer .social-links a {
+    color: white;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .social-links a:hover {
+    color: #007bff;
+  }
+  
+  .footer .footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .sponsor-logos {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .sponsor-logos img {
+    max-height: 80px;
+    margin: 0 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sponsor-logos img:hover {
+    opacity: 1;
+  }
