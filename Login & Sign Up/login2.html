@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register System</title>
+    <link rel="stylesheet" href="login2.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <a href="../Pages/Home/index.html">
+        <span class="icon-close">
+            <i class="bi bi-x"></i>
+        </span>
+        </a>
+        <div class="form-box login">
+          <h2>User Login</h2>
+          <form action="../Pages/Home/index2.html">
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-envelope-fill"></i></span>
+              <input type="email" title="Email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" title="Password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox">Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Login as User</button>
+            <div class="login-register">
+                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+            </div>
+            <div class="switch-login">
+                <p>Are you an admin? <a href="#" class="admin-login-link">Login as Admin</a></p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box admin-login">
+          <h2>Admin Login</h2>
+          <form action="../Pages/admin-dashboard.html">
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-person-badge-fill"></i></span>
+              <input type="text" title="Admin Username" required>
+              <label>Admin Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" title="Password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox">Remember me</label>
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn admin-btn">Login as Admin</button>
+            <div class="switch-login">
+                <p>Not an admin? <a href="#" class="user-login-link">Login as User</a></p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <h2>User Registration</h2>
+          <form action="#">
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-person-fill"></i></span>
+              <input type="text" title="Username" required>
+              <label>Username</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-envelope-fill"></i></span>
+              <input type="email" title="Email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bi bi-lock-fill"></i></span>
+              <input type="password" title="Password" required>
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <label><input type="checkbox">I agree to the terms & conditions</label>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <div class="login-register">
+                <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    <script src="../js/script.js"></script>
+
+</body>
+</html>
